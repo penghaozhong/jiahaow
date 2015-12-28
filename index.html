@@ -15,32 +15,109 @@
         .ui-btn-icon-top::after {
             top: 1px;
         }
+        .ui-content {
+            border-width: 0;
+            overflow-x: hidden;
+            overflow-y: visible;
+            padding: 3px;
+        }
+        .ui-grid-a > .ui-block-a {
+            width: 30%;
+        }
+        .ui-grid-a > .ui-block-b {
+            width: 70%;
+        }
+        .ui-content .ui-listview-inset {
+            margin: 0.01em 0;
+        }
     </style>
+    <script>
+        $(document).ready(function(){
+            $("#y_div").hide();
+            $("#k_div").hide();
+
+            $("#a_yiyuan").on("click",function(){
+                $("#y_div").show();
+                $("#k_div").hide();
+            });
+            $("#a_keshi").on("click",function(){
+                $("#y_div").hide();
+                $("#k_div").show();
+            });
+            $("#a_moren").on("click",function(){
+                $("#y_div").hide();
+                $("#k_div").hide();
+            });
+        });
+    </script>
 </head>
 <body>
     <div data-role="page">
         <div data-role="header" class="ui-header" style="height:50px;color: white;background-color:#2389da;text-shadow:0 0 0;border-top: 0px; ">
             <div class="ui-title ui-btn-left" style="font-size: 16px;font-weight:normal">首页</div>
-            <h1>加号问诊</h1>
-            <div class="ui-btn-right ui-title"><img src="res/img/searchicon.png"></div>
+            <div  class="ui-title" style="font-size: 1.5em;padding: 0.4em 0;">加号问诊</div>
+            <div class="ui-btn-right ui-title"><img src="res/images/searchicon.png"></div>
         </div>
         <div role="main" class="ui-content">
-            <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br> <h1>内部</h1>
-            <br>
+            <div data-role="navbar" data-iconpos="right" class="ui-nodisc-icon" >
+                <ul>
+                    <li><a id="a_yiyuan" data-icon="jiahao-down" style="font-weight:normal;font-size: 14px" >全部医院</a></li>
+                    <li><a id="a_keshi" data-icon="jiahao-down" style="font-weight:normal;font-size: 14px">全部科室</a></li>
+                    <li><a id="a_moren" data-icon="jiahao-down" style="font-weight:normal;font-size: 14px">默认排序</a></li>
+                </ul>
+            </div>
+            <div data-role="main" id="y_div" class="ui-content" style="padding:1px">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                            <ul data-role="listview" data-inset="true" >
+                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">全北京(81)</a></li>
+                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">北京(81)</a></li>
+                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">上海(0)</a></li>
+                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">天津(0)</a></li>
+                        </ul>
+                    </div>
+                    <div class="ui-block-b">
+                        <ul data-role="listview" data-inset="true" >
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京协和医院（113）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">解放军总医院（301)（184）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京儿童医院（47）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京大学口腔医院（37）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">首都儿科研究所（19）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京妇产医院（21）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">阜外心血管病医院（43）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京大学第一医院（112）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京大学肿瘤医院（32）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">解放军第二炮兵总医院...（21）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京宣武医院（55）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">卫生部北京医院（57）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京同仁医院（98）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">中国医学科学院肿瘤医院（42）</a></li>
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京安贞医院（88）</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div data-role="main" id="k_div" class="ui-content" style="padding:1px">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <ul data-role="listview" data-inset="true" >
+                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">全北京(1)</a></li>
+                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">内科(39)</a></li>
+                        </ul>
+                    </div>
+                    <div class="ui-block-b">
+                        <ul data-role="listview" data-inset="true" >
+                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">放疗科（1）</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div data-role="footer" data-position="fixed" style="height: 48px;" >
+
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" style="height: 48px;" >
             <div class="ui-grid-c">
                  <div class="ui-block-a" style="text-align: center; background-color: white;"> <a href="#" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-jiahao" style="font-weight:normal;color: #3ab9e9;border-style: none;background-color: white">加号</a></div>
                 <div class="ui-block-b" style="text-align: center; background-color: white;"> <a href="#"  style="font-weight:normal;color: #3ab9e9;border-style: none;background-color: white" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-yizhen">义诊</a></div>

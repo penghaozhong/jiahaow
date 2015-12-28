@@ -4715,14 +4715,17 @@ html .ui-popup .ui-field-contain > label + .ui-flipswitch {
 	padding: .2em;
 }
 .ui-icon-jiahao:after {
-	background-image: url(img/dbicon01.jpg);
+	background-image: url(images/dbicon01.jpg);
 }
 .ui-icon-yizhen:after {
-	background-image: url(img/dbicon02.jpg);
+	background-image: url(images/dbicon02.jpg);
 }
 .ui-icon-zixun:after {
-	background-image: url(img/dbicon03.jpg);
+	background-image: url(images/dbicon03.jpg);
 }
 .ui-icon-wode:after {
-	background-image: url(img/dbicon04.jpg);
+	background-image: url(images/dbicon04.jpg);
+}
+.ui-icon-jiahao-down:after {
+	background-image: url(images/down-icon.png);
 }
