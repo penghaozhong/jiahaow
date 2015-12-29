@@ -23,12 +23,6 @@
             overflow-y: visible;
             padding: 3px;
         }
-        .ui-grid-a > .ui-block-a {
-            width: 35%;
-        }
-        .ui-grid-a > .ui-block-b {
-            width: 65%;
-        }
         .ui-content .ui-listview-inset {
             margin: 0.01em 0;
         }
@@ -37,6 +31,32 @@
         }
         #ui_yiyuan li a:hover{
             background-color: #ededed;
+        }
+        .yiyuanxiakeshi {
+            margin-top:5px;
+            font-size:12px;
+            font-weight:normal;
+            color: #005da7;
+        }
+        .yishengming{
+            color: black;
+            text-decoration: none;
+            font-weight:normal;
+        }
+        .yishengzhicheng{
+            margin-left: 10px;
+            font-size: 14px;
+            font-weight:normal;
+        }
+        .zhuanchang{
+            margin-top:5px;
+            color: #666666;
+            font-size: 13px
+        }
+        .yishenglist{
+            margin-bottom:5px;
+            padding: 10px;
+            background: #fff none repeat scroll 0 0;
         }
 
     </style>
@@ -48,14 +68,17 @@
             $("#a_yiyuan").on("click",function(){
                 $("#y_div").show();
                 $("#k_div").hide();
+                $("#list_doctor").hide();
             });
             $("#a_keshi").on("click",function(){
                 $("#y_div").hide();
                 $("#k_div").show();
+                $("#list_doctor").hide();
             });
             $("#a_moren").on("click",function(){
                 $("#y_div").hide();
                 $("#k_div").hide();
+                $("#list_doctor").show();
             });
         });
 
@@ -75,10 +98,10 @@
             if(cs=='0'){
                 for(var i=0;i<yiyuan1.length;i++){$('#yiyuan1_'+yiyuan1[i][0]).show();}
             }else{
-                for(var i=0;i<yiyuan1.length;i++){
-                    if(yiyuan1[i][1]==cs)
-                        $('#yiyuan1_'+yiyuan1[i][0]).show();
-                    else
+                for(var i=0;i<yiyuan1.length;i++) {
+                    if (yiyuan1[i][1] == cs){
+                        $('#yiyuan1_' + yiyuan1[i][0]).show();
+                }else
                         $('#yiyuan1_'+yiyuan1[i][0]).hide();
                 }
             }
@@ -100,9 +123,10 @@
                     <li><a id="a_moren" data-icon="jiahao-down" style="font-weight:normal;font-size: 14px">默认排序</a></li>
                 </ul>
             </div>
+            <!--医院-->
             <div data-role="main" id="y_div" class="ui-content" style="padding:1px">
                 <div class="ui-grid-a">
-                    <div class="ui-block-a">
+                    <div class="ui-block-a" style="width: 35%;">
                             <ul data-role="listview" data-inset="true" id="ui_yiyuan">
                             <li id="diqu_0"><a  onclick="diquClk('0')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">全北京(81)</a></li>
                             <li id="diqu_c38077"><a onclick="diquClk('c38077')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">北京(81)</a></li>
@@ -110,7 +134,7 @@
                             <li id="diqu_c43942"><a onclick="diquClk('c43942')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">天津(0)</a></li>
                         </ul>
                     </div>
-                    <div class="ui-block-b">
+                    <div class="ui-block-b" style="width: 65%;">
                         <ul data-role="listview" data-inset="true" >
                             <li id="yiyuan_cf13a0b96-0238-4f6c-94c8-5edbd751e29f"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京协和医院（113）</a></li>
                             <li id="yiyuan_ce703db2c-8641-4326-8edd-cbb70b592726"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">解放军总医院（301)（184）</a></li>
@@ -131,9 +155,10 @@
                     </div>
                 </div>
             </div>
-            <div data-role="main" id="k_div" class="ui-content" style="padding:1px">
+            <!--科室-->
+            <div data-role="main" id="k_div" class="ui-content"  style="padding:1px">
                 <div class="ui-grid-a" >
-                    <div class="ui-block-a">
+                    <div class="ui-block-a" style="width: 35%;">
                             <ul data-role="listview" data-inset="true" id="ui_yiyuan">
                                 <li><a onclick="diquClk1('0')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">全北京(178)</a></li>
                                 <li><a onclick="diquClk1('c77071')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">内科(39)</a></li>
@@ -155,7 +180,7 @@
                                 <li><a onclick="diquClk1('c65191')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">其他科室(22)</a></li>
                             </ul>
                     </div>
-                    <div class="ui-block-b">
+                    <div class="ui-block-b" style="width: 65%;">
                         <ul data-role="listview" data-inset="true" >
                             <li id="yiyuan1_cb4eaa217-a2ba-41dc-ba4b-c6e5f55d2718"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">放疗科（1）</a></li>
                             <li id="yiyuan1_c6235d3f6-f302-480a-b73e-c1305d20b217"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">体检保健科（1）</a></li>
@@ -181,10 +206,158 @@
                     </div>
                 </div>
             </div>
+            <!--医生list-->
+            <div data-role="main" id="list_doctor" class="ui-content">
+                <div data-role="main" class="ui-grid-solo ui-corner-all ui-shadow yishenglist">
+                    <div class="ui-block-a">
+                        <div class="ui-grid-solo">
+                            <div class="ui-block-a">
+                                <div style="float: left;margin-right: 10px;">
+                                    <a href="#"><img class="ui-corner-all" width="70" height="80"
+                                                     src="http://m.jiahaow.com:80/admin/fileadmin/upfile/1446271985091.jpg"
+                                                     alt=""></a>
+                                </div>
+                                <div>
+                                    <a class="yishengming" style="color: black; font-weight:normal" href="#">刘国莉 </a>
+                                    <span class="yishengzhicheng">主任医师 </span>
+                                    <br>
+
+                                    <div class="yiyuanxiakeshi"><span>医院：北京大学人民医院</span></div>
+                                    <div class="yiyuanxiakeshi"><span>科室：产科 </span></div>
+                                    <div class="zhuanchang">专长：围产保健、高危妊娠、产前</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div style="margin-top:5px">
+                        <span><a href="#"><img src="res/images/jiahaobut.png"></a> </span>
+                        <span><img src="res/images/jiahaobut1.png"></a></span>
+                        <span><img src="res/images/jiahaobut2.png"></a></span>
+                    </div>
+                </div>
+
+                <div data-role="main" class="ui-grid-solo ui-corner-all ui-shadow yishenglist">
+                    <div class="ui-block-a">
+                        <div class="ui-grid-solo">
+                            <div class="ui-block-a">
+                                <div style="float: left;margin-right: 10px;">
+                                    <a href="#"><img width="70" height="80"
+                                                     src="http://m.jiahaow.com:80/admin/fileadmin/upfile/1446271985091.jpg"
+                                                     alt=""></a>
+                                </div>
+                                <div>
+                                    <a class="yishengming" href="#">刘国莉 </a>
+                                    <span class="yishengzhicheng">主任医师 </span>
+                                    <br>
+
+                                    <div class="yiyuanxiakeshi"><span>医院：北京大学人民医院</span></div>
+                                    <div class="yiyuanxiakeshi"><span>科室：产科 </span></div>
+                                    <div class="zhuanchang">专长：围产保健、高危妊娠、产前</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div style="margin-top:5px">
+                        <span><a href="#"><img src="res/images/jiahaobut.png"></a> </span>
+                        <span><img src="res/images/jiahaobut1.png"></a></span>
+                        <span><img src="res/images/jiahaobut2.png"></a></span>
+                    </div>
+                </div>
+                <div data-role="main" class="ui-grid-solo ui-corner-all ui-shadow yishenglist">
+                    <div class="ui-block-a">
+                        <div class="ui-grid-solo">
+                            <div class="ui-block-a">
+                                <div style="float: left;margin-right: 10px;">
+                                    <a href="#"><img width="70" height="80"
+                                                     src="http://m.jiahaow.com:80/admin/fileadmin/upfile/1446271985091.jpg"
+                                                     alt=""></a>
+                                </div>
+                                <div>
+                                    <a class="yishengming" href="#">刘国莉 </a>
+                                    <span class="yishengzhicheng">主任医师 </span>
+                                    <br>
+
+                                    <div class="yiyuanxiakeshi"><span>医院：北京大学人民医院</span></div>
+                                    <div class="yiyuanxiakeshi"><span>科室：产科 </span></div>
+                                    <div class="zhuanchang">专长：围产保健、高危妊娠、产前</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div style="margin-top:5px">
+                        <span><a href="#"><img src="res/images/jiahaobut.png"></a> </span>
+                        <span><img src="res/images/jiahaobut1.png"></a></span>
+                        <span><img src="res/images/jiahaobut2.png"></a></span>
+                    </div>
+                </div>
+                <div data-role="main" class="ui-grid-solo ui-corner-all ui-shadow yishenglist">
+                    <div class="ui-block-a">
+                        <div class="ui-grid-solo">
+                            <div class="ui-block-a">
+                                <div style="float: left;margin-right: 10px;">
+                                    <a href="#"><img width="70" height="80"
+                                                     src="http://m.jiahaow.com:80/admin/fileadmin/upfile/1446271985091.jpg"
+                                                     alt=""></a>
+                                </div>
+                                <div>
+                                    <a class="yishengming" href="#">刘国莉 </a>
+                                    <span class="yishengzhicheng">主任医师 </span>
+                                    <br>
+
+                                    <div class="yiyuanxiakeshi"><span>医院：北京大学人民医院</span></div>
+                                    <div class="yiyuanxiakeshi"><span>科室：产科 </span></div>
+                                    <div class="zhuanchang">专长：围产保健、高危妊娠、产前</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div style="margin-top:5px">
+                        <span><a href="#"><img src="res/images/jiahaobut.png"></a> </span>
+                        <span><img src="res/images/jiahaobut1.png"></a></span>
+                        <span><img src="res/images/jiahaobut2.png"></a></span>
+                    </div>
+                </div>
+
+                <div data-role="main" class="ui-grid-solo ui-corner-all ui-shadow yishenglist">
+                    <div class="ui-block-a">
+                        <div class="ui-grid-solo">
+                            <div class="ui-block-a">
+                                <div style="float: left;margin-right: 10px;">
+                                    <a href="#"><img width="70" height="80"
+                                                     src="http://m.jiahaow.com:80/admin/fileadmin/upfile/1446271985091.jpg"
+                                                     alt=""></a>
+                                </div>
+                                <div>
+                                    <a class="yishengming" href="#">刘国莉 </a>
+                                    <span class="yishengzhicheng">主任医师 </span>
+                                    <br>
+
+                                    <div class="yiyuanxiakeshi"><span>医院：北京大学人民医院</span></div>
+                                    <div class="yiyuanxiakeshi"><span>科室：产科 </span></div>
+                                    <div class="zhuanchang">专长：围产保健、高危妊娠、产前</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div style="margin-top:5px">
+                        <span><a href="#"><img src="res/images/jiahaobut.png"></a> </span>
+                        <span><img src="res/images/jiahaobut1.png"></a></span>
+                        <span><img src="res/images/jiahaobut2.png"></a></span>
+                    </div>
+                </div>
+            </div>
 
         </div>
-
-
         <div data-role="footer" data-position="fixed" data-tap-toggle="false" style="height: 48px;" >
             <div class="ui-grid-c">
                  <div class="ui-block-a" style="text-align: center; background-color: white;"> <a href="#" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-jiahao" style="font-size:11px;font-weight:normal;color: rgba(0, 0, 0, 0.7);border-style: none;background-color: white">加号</a></div>

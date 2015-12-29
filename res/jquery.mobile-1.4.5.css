@@ -4715,25 +4715,22 @@ html .ui-popup .ui-field-contain > label + .ui-flipswitch {
 	padding: .2em;
 }
 .ui-icon-jiahao:after {
-	background-image: url(images/dbicon01.jpg);
+	background-image: url(images/b1.png);
 	width: 22px;
 	height: 19px;
 }
 .ui-icon-yizhen:after {
-	background-image: url(images/dbicon02.jpg);
+	background-image: url(images/b2.png);
 	width: 22px;
 	height: 19px;
 }
 .ui-icon-zixun:after {
-	background-image: url(images/dbicon03.jpg);
+	background-image: url(images/b3.png);
 	width: 22px;
 	height: 19px;
 }
 .ui-icon-wode:after {
-	background-image: url(images/dbicon04.jpg);
+	background-image: url(images/b4.png);
 	width: 22px;
 	height: 19px;
-}
-.ui-icon-jiahao-down:after {
-	background-image: url(images/down-icon.png);
 }
