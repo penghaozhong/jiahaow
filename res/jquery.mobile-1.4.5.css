@@ -4734,3 +4734,6 @@ html .ui-popup .ui-field-contain > label + .ui-flipswitch {
 	width: 22px;
 	height: 19px;
 }
+.ui-icon-jiahao-down:after {
+	background-image: url(images/down-icon.png);
+}
