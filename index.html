@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="res/jquery.mobile.theme-1.4.5.css">
     <script src="res/jquery-1.11.3.min.js"></script>
     <script src="res/jquery.mobile-1.4.5.min.js"></script>
+    <script src="res/iscroll.js"></script>
+    <script src="res/hospitaldata.js"></script>
     <style>
         .ui-btn-icon-top {
             padding-top: 23px;
@@ -22,14 +24,21 @@
             padding: 3px;
         }
         .ui-grid-a > .ui-block-a {
-            width: 30%;
+            width: 35%;
         }
         .ui-grid-a > .ui-block-b {
-            width: 70%;
+            width: 65%;
         }
         .ui-content .ui-listview-inset {
             margin: 0.01em 0;
         }
+        #ui_yiyuan li a {
+            background-color: white;
+        }
+        #ui_yiyuan li a:hover{
+            background-color: #ededed;
+        }
+
     </style>
     <script>
         $(document).ready(function(){
@@ -49,17 +58,42 @@
                 $("#k_div").hide();
             });
         });
+
+        function diquClk(cs){
+            if(cs=='0'){
+                for(var i=0;i<yiyuan.length;i++){$('#yiyuan_'+yiyuan[i][0]).show();}
+            }else{
+                for(var i=0;i<yiyuan.length;i++){
+                    if(yiyuan[i][1]==cs)
+                        $('#yiyuan_'+yiyuan[i][0]).show();
+                    else
+                        $('#yiyuan_'+yiyuan[i][0]).hide();
+                }
+            }
+        }
+        function diquClk1(cs){
+            if(cs=='0'){
+                for(var i=0;i<yiyuan1.length;i++){$('#yiyuan1_'+yiyuan1[i][0]).show();}
+            }else{
+                for(var i=0;i<yiyuan1.length;i++){
+                    if(yiyuan1[i][1]==cs)
+                        $('#yiyuan1_'+yiyuan1[i][0]).show();
+                    else
+                        $('#yiyuan1_'+yiyuan1[i][0]).hide();
+                }
+            }
+        }
     </script>
 </head>
 <body>
     <div data-role="page">
-        <div data-role="header" class="ui-header" style="height:50px;color: white;background-color:#2389da;text-shadow:0 0 0;border-top: 0px; ">
+        <div data-role="header"  class="ui-header" style="height:50px;color: white;background-color:#2389da;text-shadow:0 0 0;border-top: 0px; ">
             <div class="ui-title ui-btn-left" style="font-size: 16px;font-weight:normal">首页</div>
             <div  class="ui-title" style="font-size: 1.5em;padding: 0.4em 0;">加号问诊</div>
             <div class="ui-btn-right ui-title"><img src="res/images/searchicon.png"></div>
         </div>
         <div role="main" class="ui-content">
-            <div data-role="navbar" data-iconpos="right" class="ui-nodisc-icon" >
+            <div data-role="navbar"  data-iconpos="right" class="ui-nodisc-icon" >
                 <ul>
                     <li><a id="a_yiyuan" data-icon="jiahao-down" style="font-weight:normal;font-size: 14px" >全部医院</a></li>
                     <li><a id="a_keshi" data-icon="jiahao-down" style="font-weight:normal;font-size: 14px">全部科室</a></li>
@@ -69,45 +103,79 @@
             <div data-role="main" id="y_div" class="ui-content" style="padding:1px">
                 <div class="ui-grid-a">
                     <div class="ui-block-a">
-                            <ul data-role="listview" data-inset="true" >
-                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">全北京(81)</a></li>
-                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">北京(81)</a></li>
-                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">上海(0)</a></li>
-                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">天津(0)</a></li>
+                            <ul data-role="listview" data-inset="true" id="ui_yiyuan">
+                            <li id="diqu_0"><a  onclick="diquClk('0')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">全北京(81)</a></li>
+                            <li id="diqu_c38077"><a onclick="diquClk('c38077')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">北京(81)</a></li>
+                            <li id="diqu_c93468"><a onclick="diquClk('c93468')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">上海(0)</a></li>
+                            <li id="diqu_c43942"><a onclick="diquClk('c43942')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">天津(0)</a></li>
                         </ul>
                     </div>
                     <div class="ui-block-b">
                         <ul data-role="listview" data-inset="true" >
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京协和医院（113）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">解放军总医院（301)（184）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京儿童医院（47）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京大学口腔医院（37）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">首都儿科研究所（19）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京妇产医院（21）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">阜外心血管病医院（43）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京大学第一医院（112）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京大学肿瘤医院（32）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">解放军第二炮兵总医院...（21）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京宣武医院（55）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">卫生部北京医院（57）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京同仁医院（98）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">中国医学科学院肿瘤医院（42）</a></li>
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京安贞医院（88）</a></li>
+                            <li id="yiyuan_cf13a0b96-0238-4f6c-94c8-5edbd751e29f"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京协和医院（113）</a></li>
+                            <li id="yiyuan_ce703db2c-8641-4326-8edd-cbb70b592726"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">解放军总医院（301)（184）</a></li>
+                            <li id="yiyuan_c7406ba50-c6de-4541-bbaa-29473747603a"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京儿童医院（47）</a></li>
+                            <li id="yiyuan_c14ac6b70-86a5-472c-a72d-898c272e242d"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京大学口腔医院（37）</a></li>
+                            <li id="yiyuan_c38811e4b-1375-4667-a720-d8bafac9940e"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">首都儿科研究所（19）</a></li>
+                            <li id="yiyuan_c6dd681a6-fac2-4cbf-a5db-5fc006a87333"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京妇产医院（21）</a></li>
+                            <li id="yiyuan_cb5d6c9b2-e6bf-403c-8c3f-0cf15b81a26e"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">阜外心血管病医院（43）</a></li>
+                            <li id="yiyuan_cefdaad1b-2e81-462f-ae9a-eb5ae93db9de"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京大学第一医院（112）</a></li>
+                            <li id="yiyuan_c9a5bad1f-f8dd-46ae-a33b-c810e57bacb1"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京大学肿瘤医院（32）</a></li>
+                            <li id="yiyuan_c38281553-804e-4390-8022-a77a2913371f"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">解放军第二炮兵总医院...（21）</a></li>
+                            <li id="yiyuan_c1bc2600b-9547-4690-a598-a66ac484dd5c"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京宣武医院（55）</a></li>
+                            <li id="yiyuan_c4e78549a-807c-4978-a859-02278cd035e7"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">卫生部北京医院（57）</a></li>
+                            <li id="yiyuan_c1fbe8842-a6d5-4733-8171-17899cebd6b7"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京同仁医院（98）</a></li>
+                            <li id="yiyuan_c8b870a68-1ee4-458d-a33f-9320cd419bed"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">中国医学科学院肿瘤医院（42）</a></li>
+                            <li id="yiyuan_c8a41f671-74f3-4c30-8767-de5ff77a7e92"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">北京安贞医院（88）</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div data-role="main" id="k_div" class="ui-content" style="padding:1px">
-                <div class="ui-grid-a">
+                <div class="ui-grid-a" >
                     <div class="ui-block-a">
-                        <ul data-role="listview" data-inset="true" >
-                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">全北京(1)</a></li>
-                            <li><a href="#" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">内科(39)</a></li>
-                        </ul>
+                            <ul data-role="listview" data-inset="true" id="ui_yiyuan">
+                                <li><a onclick="diquClk1('0')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">全北京(178)</a></li>
+                                <li><a onclick="diquClk1('c77071')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">内科(39)</a></li>
+                                <li><a onclick="diquClk1('c67512')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">外科(38)</a></li>
+                                <li><a onclick="diquClk1('c92091')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">妇产科(4)</a></li>
+                                <li><a onclick="diquClk1('c69558')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">儿科(6)</a></li>
+                                <li><a onclick="diquClk1('c35420')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">骨科(4)</a></li>
+                                <li><a onclick="diquClk1('c21115')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">口腔科(12)</a></li>
+                                <li><a onclick="diquClk1('c17772')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">中医科(18)</a></li>
+                                <li><a onclick="diquClk1('c14120')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">皮肤科(2)</a></li>
+                                <li><a onclick="diquClk1('c10582')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">肿瘤科(15)</a></li>
+                                <li><a onclick="diquClk1('c42624')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">眼科(2)</a></li>
+                                <li><a onclick="diquClk1('c18540')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">耳鼻喉科(1)</a></li>
+                                <li><a onclick="diquClk1('c96063')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">男科(1)</a></li>
+                                <li><a onclick="diquClk1('c15794')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">介入医学科(4)</a></li>
+                                <li><a onclick="diquClk1('c83411')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">重症医学科(1)</a></li>
+                                <li><a onclick="diquClk1('c17337')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">精神心理科(2)</a></li>
+                                <li><a onclick="diquClk1('c56303')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">医学影像科(6)</a></li>
+                                <li><a onclick="diquClk1('c65191')" class="ui-btn" style="border-right-width: 0px;font-weight:normal;font-size: 15px">其他科室(22)</a></li>
+                            </ul>
                     </div>
                     <div class="ui-block-b">
                         <ul data-role="listview" data-inset="true" >
-                            <li><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">放疗科（1）</a></li>
+                            <li id="yiyuan1_cb4eaa217-a2ba-41dc-ba4b-c6e5f55d2718"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">放疗科（1）</a></li>
+                            <li id="yiyuan1_c6235d3f6-f302-480a-b73e-c1305d20b217"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">体检保健科（1）</a></li>
+                            <li id="yiyuan1_cedc691a4-3c47-4f37-ae09-e812a0bb3389"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">康复医学（1）</a></li>
+                            <li id="yiyuan1_cc6f6e683-fc48-435b-a90a-c1aeabfa9bcc"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">哮喘中心（1）</a></li>
+                            <li id="yiyuan1_c5f5e65ab-398e-45b9-9573-5667ff2ab347"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">中西医结研究所（1）</a></li>
+                            <li id="yiyuan1_cb0a814db-6767-41a5-ba96-d39a279c3d43"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">胸部肿瘤内科（1）</a></li>
+                            <li id="yiyuan1_cad5628a0-76bc-45bf-b79e-67a5b88293bc"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">临床检验科（1）</a></li>
+                            <li id="yiyuan1_c0ab3934c-997c-4373-9a28-2002d316ce49"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">生化科（1）</a></li>
+                            <li id="yiyuan1_c406761c4-3c32-4750-8a68-b4ff3c246e1f"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">口腔黏膜科（1）</a></li>
+                            <li id="yiyuan1_cb43d17d7-c459-46c6-87fe-7e7479c8d583"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">微生物科（1）</a></li>
+                            <li id="yiyuan1_c58d9f8e0-f2b1-452f-aa1d-3e99e5b72fd9"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">全军临床输血中心（1）</a></li>
+                            <li id="yiyuan1_c5eba9ec5-fe35-4eba-8482-f3c2e187cb03"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">儿童口腔科（2）</a></li>
+                            <li id="yiyuan1_cca1a9f9a-535d-4a93-be25-b34a53fe14f8"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">冠心病中心（3）</a></li>
+                            <li id="yiyuan1_c1ecf4dbe-4703-4ca1-9474-7be0c4554baf"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">口腔颌面外科（3）</a></li>
+                            <li id="yiyuan1_caad92c64-2dc1-4873-9f8d-7af9274f5e47"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">磁共振成像室（1）</a></li>
+                            <li id="yiyuan1_c4ce232b8-7235-4cb5-801f-82f55ec303a4"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">中心实验室（3）</a></li>
+                            <li id="yiyuan1_ced6c08e4-fc2e-4f36-a88b-7681fd987230"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">老年神经内科（1）</a></li>
+                            <li id="yiyuan1_c7e94ad2e-fd5b-4c91-ba57-bf7bff099c65"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">中西医结合肿瘤内科（2）</a></li>
+                            <li id="yiyuan1_c1971e5f2-d54d-42f6-a249-96efdb9f37b6"><a href="#" class="ui-btn" style="font-weight:normal;font-size: 15px">基本外科（4）</a></li>
 
                         </ul>
                     </div>
