@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>患者注册</title>
+    <link rel="stylesheet" href="/jiahaow/res/jquery.mobile-1.4.5.css">
+    <script src="/jiahaow/res/jquery-1.11.3.min.js"></script>
+    <script src="/jiahaow/res/jquery.mobile-1.4.5.min.js"></script>
+    <script src="/jiahaow/res/jquery.validate.js"></script>
+    <style>
+        .ui-input-btn ,.ui-input-btn:visited {
+            background-color: #2389da!important;
+            border-color: #ddd;
+            color: white !important;
+            text-shadow: none !important;
+        }
+        .ui-btn, label.ui-btn {
+            border-style: solid;
+            border-width: 1px;
+            font-weight: normal;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $( "form" ).validate({
+                messages: {
+                    number: {
+                        number: '手机号不能为空!'
+                    },
+                    yanzhengma: {
+                        yanzhengma: '手机验证码不能为空!'
+                    },
+                    password: {
+                        password: '密码不能为空!'
+                    },
+                    username: {
+                        username: '姓名不能为空!'
+                    },                    birth: {
+                        birth: '出生日期不能为空!'
+                    },
+                    work: {
+                        work: '工作时间不能为空!'
+                    }
+                },
+                rules: {
+                    number: {
+                        required: true
+                    },
+                    yanzhengma: {
+                        required: true
+                    },
+                    password: {
+                        required: true
+                    },
+                    username: {
+                        required: true
+                    },
+                    birth: {
+                        required: true
+                    },
+                    work: {
+                        required: true
+                    }
+                },
+                errorPlacement: function( error, element ) {
+                    element[0].placeholder = error[0].innerHTML
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header"  class="ui-header" style="height:50px;color: white;background-color:#2389da;text-shadow:0 0 0;border-top: 0px; ">
+        <div class="ui-title ui-btn-left" style="font-size: 16px;font-weight:normal">首页</div>
+        <div  class="ui-title" style="font-size: 1.5em;padding: 0.4em 0;">患者注册</div>
+        <div class="ui-btn-right ui-title" style="font-size: 16px;font-weight:normal">登录</div>
+    </div>
+    <div role="main" class="ui-content">
+        <form  id="form" method="post" action="#">
+            <input name="number" style="line-height: 1.9em;" id="number" placeholder="请输入您的手机号" value="" type="text">
+            <div class="ui-grid-a" style="margin: -7px 0px -7px 0px">
+                <div class="ui-block-a" style="width: 60%">
+                    <input name="yanzhengma" style="line-height: 1.9em;" id="yanzhengma" placeholder="请输入您的手机验证码" value="" type="text">
+                </div>
+                <div class="ui-block-b" style="width: 40%"  data-role="controlgroup">
+                    <a style="font-weight: normal;background-color:#3388CC;color: white;" href="#" class="ui-btn">获取验证码</a>
+                </div>
+            </div>
+            <input name="password" style="line-height: 1.9em;" id="password" placeholder="请输入密码，6-16个字符，区分大小写" value="" type="text">
+            <input name="password1" style="line-height: 1.9em;" id="password1" placeholder="请再次输入密码确认" value="" type="text">
+            <input name="username" style="line-height: 1.9em;" id="username" placeholder="请输入患者真实姓名，用于取号" value="" type="text">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <label for="male">男性</label>
+                <input type="radio" name="gender" id="male" value="male" checked>
+                <label for="female">女性</label>
+                <input type="radio" name="gender" id="female" value="female">
+            </fieldset>
+            <input name="birth" style="line-height: 1.9em;" id="birth" placeholder="请选择出生日期" value="" type="text">
+            <input name="work" style="line-height: 1.9em;" id="work" placeholder="请输入工作单位" value="" type="text">
+            <p style="color: #4FCCF3;font-size: 10px;">同意加号网服务协议，则请继续注册。</p>
+            <input type="submit" style="background-color: blue;"  value="注&nbsp;册">
+        </form>
+    </div>
+</div>
+</body>
+</html>
