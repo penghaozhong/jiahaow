@@ -8,16 +8,13 @@
     <script src="/jiahaow/res/jquery-1.11.3.min.js"></script>
     <script src="/jiahaow/res/jquery.mobile-1.4.5.min.js"></script>
     <script src="/jiahaow/res/jquery.validate.js"></script>
-    <style>
-        .ui-input-btn ,.ui-input-btn:visited {
-            background-color: #2389da!important;
+    <style type="text/css">
+        #logindiv .ui-btn,
+        .ui-btn:visited  {
+            background-color: #2389da;
             border-color: #ddd;
-            color: white !important;
-            text-shadow: none !important;
-        }
-        .ui-btn, label.ui-btn {
-            border-style: solid;
-            border-width: 1px;
+            color: white ;
+            text-shadow: none ;
             font-weight: normal;
         }
     </style>
@@ -52,14 +49,14 @@
     <div data-role="header"  class="ui-header" style="height:50px;color: white;background-color:#2389da;text-shadow:0 0 0;border-top: 0px; ">
         <div  class="ui-title" style="font-size: 1.5em;padding: 0.4em 0;">登陆</div>
     </div>
-    <div role="main" class="ui-content">
+    <div role="main" id="logindiv" class="ui-content">
         <form  id="form" method="post" action="#">
             <input name="usernamex" style="line-height: 1.9em;" id="usernamex" placeholder="请输入您的手机号" value="" type="text">
             <input name="passwordx" style="line-height: 1.9em;" id="passwordx" placeholder="请输入密码" value="" type="password">
             <input type="submit"  value="登&nbsp;录">
         </form>
         <div class="ui-grid-a" style="padding:10px;">
-            <div class="ui-block-a"><a style="text-decoration: none; font-weight: normal;" href="#" >立即注册</a> </div>
+            <div class="ui-block-a"><a style="text-decoration: none; font-weight: normal;" href="index.html" >立即注册</a> </div>
             <div class="ui-block-b" style="text-align: right;"><a  style="text-decoration: none; font-weight: normal;" href="#" >忘记密码?</a> </div>
         </div>
     </div>
