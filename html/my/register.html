@@ -36,7 +36,8 @@
                     },
                     username: {
                         username: '姓名不能为空!'
-                    },                    birth: {
+                    },
+                    birth: {
                         birth: '出生日期不能为空!'
                     },
                     work: {
@@ -84,8 +85,8 @@
                 <div class="ui-block-a" style="width: 60%">
                     <input name="yanzhengma" style="line-height: 1.9em;" id="yanzhengma" placeholder="请输入您的手机验证码" value="" type="text">
                 </div>
-                <div class="ui-block-b" style="width: 40%"  data-role="controlgroup">
-                    <a style="font-weight: normal;background-color:#3388CC;color: white;" href="#" class="ui-btn">获取验证码</a>
+                <div class="ui-block-b" style="width: 40%;"  data-role="controlgroup">
+                    <a style="color: #3388CC;font-size: 16px;font-weight:normal;text-decoration:none;" href="#" class="ui-btn">获取验证码</a>
                 </div>
             </div>
             <input name="password" style="line-height: 1.9em;" id="password" placeholder="请输入密码，6-16个字符，区分大小写" value="" type="text">
@@ -97,11 +98,28 @@
                 <label for="female">女性</label>
                 <input type="radio" name="gender" id="female" value="female">
             </fieldset>
-            <input name="birth" style="line-height: 1.9em;" id="birth" placeholder="请选择出生日期" value="" type="text">
+            <div class="ui-grid-a" style="margin: -15px 0px -15px 0px">
+                <div class="ui-block-a" style="width: 35%;margin: 7px 0px -7px 0px;color: #A9A9A9">
+                    <p>请选择出生日期:</p>
+                </div>
+                <div class="ui-block-b" style="width: 65%"  data-role="controlgroup">
+                    <input name="birth" style="line-height: 1.9em;" id="birth" placeholder="请选择出生日期" value="" type="date">
+                </div>
+            </div>
             <input name="work" style="line-height: 1.9em;" id="work" placeholder="请输入工作单位" value="" type="text">
-            <p style="color: #4FCCF3;font-size: 10px;">同意加号网服务协议，则请继续注册。</p>
+            <p style="margin: -3px 0px 20px 0px">
+                <a href="http://192.168.1.103:9090/jiahaow/html/my/agreement.html" style="color: #4FBEEB;font-size: 12px;font-weight:normal;text-decoration:none;">同意加号网服务协议，则请继续注册。</a>
+            </p>
             <input type="submit" style="background-color: blue;"  value="注&nbsp;册">
         </form>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" style="height: 48px;" >
+            <div class="ui-grid-c">
+                <div class="ui-block-a" style="text-align: center; background-color: white;"> <a href="#" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-jiahao" style="font-size:11px;font-weight:normal;color: rgba(0, 0, 0, 0.7);border-style: none;background-color: white">加号</a></div>
+                <div class="ui-block-b" style="text-align: center; background-color: white;"> <a href="#"  style="font-size:11px;font-weight:normal;color: rgba(0, 0, 0, 0.7);border-style: none;background-color: white" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-yizhen">义诊</a></div>
+                <div class="ui-block-c" style="text-align: center; background-color: white"> <a href="#"  style="font-size:11px;font-weight:normal;color: rgba(0, 0, 0, 0.7);border-style: none;background-color: white" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-zixun">资讯</a></div>
+                <div class="ui-block-d" style="text-align: center; background-color: white"> <a href="#"  style="font-size:11px;font-weight:normal;color: rgba(0, 0, 0, 0.7);border-style: none;background-color: white" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-wode">我的</a></div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
