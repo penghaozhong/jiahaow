@@ -8,16 +8,7 @@
     <script src="/jiahaow/res/jquery-1.11.3.min.js"></script>
     <script src="/jiahaow/res/jquery.mobile-1.4.5.min.js"></script>
     <script src="/jiahaow/res/jquery.validate.js"></script>
-    <style type="text/css">
-        #logindiv .ui-btn,
-        .ui-btn:visited  {
-            background-color: #2389da;
-            border-color: #ddd;
-            color: white ;
-            text-shadow: none ;
-            font-weight: normal;
-        }
-    </style>
+
     <script>
         $(document).ready(function() {
             $( "form" ).validate({
@@ -49,6 +40,16 @@
     <div data-role="header"  class="ui-header" style="height:50px;color: white;background-color:#2389da;text-shadow:0 0 0;border-top: 0px; ">
         <div  class="ui-title" style="font-size: 1.5em;padding: 0.4em 0;">登陆</div>
     </div>
+    <style type="text/css">
+        #logindiv .ui-btn,
+        .ui-btn:visited  {
+            background-color: #2389da;
+            border-color: #ddd;
+            color: white ;
+            text-shadow: none ;
+            font-weight: normal;
+        }
+    </style>
     <div role="main" id="logindiv" class="ui-content">
         <form  id="form" method="post" action="#">
             <input name="usernamex" style="line-height: 1.9em;" id="usernamex" placeholder="请输入您的手机号" value="" type="text">
