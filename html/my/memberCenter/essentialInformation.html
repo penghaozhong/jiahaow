@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>基本信息</title>
+    <link rel="stylesheet" href="/jiahaow/res/jquery.mobile-1.4.5.css">
+    <script src="/jiahaow/res/jquery-1.11.3.min.js"></script>
+    <script src="/jiahaow/res/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header"  class="ui-header" style="height:50px;color: white;background-color:#2389da;text-shadow:0 0 0;border-top: 0px; ">
+        <div class="ui-title ui-btn-left" style="font-size: 16px;font-weight:normal">
+            <a href="http://192.168.1.103:9090/jiahaow/html/my/memberCenter/memberCenter.html" style="color: white;font-size: 16px;font-weight:normal;text-decoration:none;">返回</a></div>
+        <div  class="ui-title" style="font-size: 1.5em;padding: 0.4em 0;">基本信息</div>
+    </div>
+    <div role="main" class="ui-content">
+        <style type="text/css">
+            #save .ui-btn,
+            .ui-btn:visited  {
+                background-color: #2389da;
+                border-color: #ddd;
+                color: white ;
+                text-shadow: none ;
+                font-weight: normal;
+            }
+        </style>
+        <form  id="form" method="post" action="#">
+            <div class="ui-field-contain">
+                <div class="ui-grid-a" >
+                    <div class="ui-block-a" style="width: 30%;margin: 20px 0px -7px 0px">
+                        <label for="fname">用户名:</label>
+                    </div>
+                    <div class="ui-block-b" style="width: 70%;"  data-role="controlgroup">
+                        <input type="text" name="fname" id="fname" value="18500505017" readonly>
+                    </div>
+                </div>
+                <div class="ui-grid-a" >
+                    <div class="ui-block-a" style="width: 30%;margin: 20px 0px -7px 0px">
+                        <label for="lname">真实姓名:</label>
+                    </div>
+                    <div class="ui-block-b" style="width: 70%;"  data-role="controlgroup">
+                        <input type="text" name="lname" id="lname" value="peng">
+                    </div>
+                </div>
+                <div class="ui-grid-a" >
+                    <div class="ui-block-a" style="width: 30%;margin: 20px 0px -7px 0px">
+                        <label for="lname">性别:</label>
+                    </div>
+                    <div class="ui-block-b" style="width: 70%;"  data-role="controlgroup">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <label for="male">男性</label>
+                            <input type="radio" name="gender" id="male" value="male" checked>
+                            <label for="female">女性</label>
+                            <input type="radio" name="gender" id="female" value="female">
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="ui-grid-a" >
+                    <div class="ui-block-a" style="width: 30%;margin: 20px 0px -7px 0px">
+                        <label for="fname">手机号:</label>
+                    </div>
+                    <div class="ui-block-b" style="width: 70%;"  data-role="controlgroup">
+                        <input type="text" name="fname" id="fname" value="18500505017">
+                    </div>
+                </div>
+                <div class="ui-grid-a" >
+                    <div class="ui-block-a" style="width: 30%;margin: 20px 0px -7px 0px">
+                        <label for="fname">出生日期:</label>
+                    </div>
+                    <div class="ui-block-b" style="width: 70%;"  data-role="controlgroup">
+                        <input name="birth" style="line-height: 1.9em;" id="birth" placeholder="请选择出生日期" value="" type="date">
+                    </div>
+                </div>
+                <div class="ui-grid-a" >
+                    <div class="ui-block-a" style="width: 30%;margin: 20px 0px -7px 0px">
+                        <label for="fname">工作单位:</label>
+                    </div>
+                    <div class="ui-block-b" style="width: 70%;"  data-role="controlgroup">
+                        <input name="work" style="line-height: 1.9em;" id="work"  value="" type="text">
+                    </div>
+                </div>
+            </div>
+            <!--<div class="ui-grid-a" data-inline="true">
+                <div class="ui-block-a" style="width: 30%;margin: 0px 0px -7px 0px">
+                    <input type="button" value="保存" >
+                </div>
+                <div class="ui-block-b" style="width: 30%;"  data-role="controlgroup">
+                    <input type="button" value="取消" >
+                </div>
+            </div>-->
+            <div id="save">
+                <input type="submit"  value="保&nbsp;存">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

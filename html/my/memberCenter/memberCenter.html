@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>患者会员中心</title>
+    <link rel="stylesheet" href="/jiahaow/res/jquery.mobile-1.4.5.css">
+    <script src="/jiahaow/res/jquery-1.11.3.min.js"></script>
+    <script src="/jiahaow/res/jquery.mobile-1.4.5.min.js"></script>
+    <style type="text/css">
+        .ui-btn-icon-left:after {
+            left: .5625em;
+            /* color: red; */
+            background-color: #FE9B02;
+        }
+        .ui-icon-myicon:after {
+            background-image: url("/jiahaow/res/images/memberCenter/r.jpg");  /**你的图片，路径是相对于当前使用文件可以访问到的*/
+
+            background-size: 30px 30px;
+            border-radius: 0; /*图标形态，0=方形，不设置就是默认的圆形*/
+        }
+    </style>
+</head>
+<body>
+<div data-role="page" >
+    <div data-role="header"  class="ui-header" style="height:50px;color: white;background-color:#2389da;text-shadow:0 0 0;border-top: 0px; ">
+        <div class="ui-title ui-btn-left" style="font-size: 16px;font-weight:normal">
+            <a href="http://192.168.1.103:9090/jiahaow/html/my/login.html" style="color: white;font-size: 16px;font-weight:normal;text-decoration:none;">首页</a></div>
+        <div  class="ui-title" style="font-size: 1.5em;padding: 0.4em 0;">患者会员中心</div>
+    </div>
+    <div role="main" id="logindiv" class="ui-content">
+        <ul data-role="listview" style="background-color: white">
+            <li style="margin: 5px 5px 0px 0px " class="ui-icon-myicon ui-btn-icon-right"><a href="http://192.168.1.103:9090/jiahaow/html/my/memberCenter/essentialInformation.html" class="ui-btn ui-icon-user ui-btn-icon-left" style="font-weight:normal;background-color: white">基本信息</a></li>
+            <li style="margin: 5px 5px 0px 0px "  class="ui-icon-myicon ui-btn-icon-right"><a href="#" class="ui-btn ui-icon-heart ui-btn-icon-left" style="font-weight:normal;background-color: white">预约成功的加号</a></li>
+            <li style="margin: 5px 5px 0px 0px " class="ui-icon-myicon ui-btn-icon-right"><a href="#" class="ui-btn ui-icon-tag ui-btn-icon-left" style="font-weight:normal;background-color: white">我的私人医生</a></li>
+            <li style="margin: 5px 5px 0px 0px " class="ui-icon-myicon ui-btn-icon-right"><a href="#" class="ui-btn ui-icon-cloud ui-btn-icon-left" style="font-weight:normal;background-color: white">私人医生咨询记录</a></li>
+            <li style="margin: 5px 5px 0px 0px " class="ui-icon-myicon ui-btn-icon-right"><a href="#" class="ui-btn ui-icon-comment ui-btn-icon-left" style="font-weight:normal;background-color: white">我的在线咨询</a></li>
+            <li style="margin: 5px 5px 0px 0px " class="ui-icon-myicon ui-btn-icon-right"><a href="#" class="ui-btn ui-icon-info ui-btn-icon-left" style="font-weight:normal;background-color: white">我的免费加号</a></li>
+            <li style="margin: 5px 5px 0px 0px " class="ui-icon-myicon ui-btn-icon-right"><a href="#" class="ui-btn ui-icon-info ui-btn-icon-left" style="font-weight:normal;background-color: white">我的免费咨询</a></li>
+            <li style="margin: 5px 5px 0px 0px " class="ui-icon-myicon ui-btn-icon-right"><a href="http://192.168.1.103:9090/jiahaow/html/my/memberCenter/myAccount.html" class="ui-btn ui-icon-eye ui-btn-icon-left" style="font-weight:normal;background-color: white">我的账户（当前余额：<span style="color: red">0元</span>）</a></li>
+            <li style="margin: 5px 5px 0px 0px " class="ui-icon-myicon ui-btn-icon-right"><a href="http://192.168.1.103:9090/jiahaow/html/my/memberCenter/updatePassword.html" class="ui-btn ui-icon-grid ui-btn-icon-left" style="font-weight:normal;background-color: white">修改密码</a></li>
+            <li style="margin: 5px 5px 0px 0px " class="ui-icon-myicon ui-btn-icon-right"><a href="#" class="ui-btn ui-icon-power ui-btn-icon-left" style="font-weight:normal;background-color: white">退出登录</a></li>
+        </ul>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" style="height: 48px;background-color: white" >
+            <!--<div class="ui-grid-c">
+                <div class="ui-block-a" style="text-align: center; background-color: white;"> <a href="#" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-jiahao" style="font-size:11px;font-weight:normal;color: rgba(0, 0, 0, 0.7);border-style: none;background-color: white">加号</a></div>
+                <div class="ui-block-b" style="text-align: center; background-color: white;"> <a href="#"  style="font-size:11px;font-weight:normal;color: rgba(0, 0, 0, 0.7);border-style: none;background-color: white" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-yizhen">义诊</a></div>
+                <div class="ui-block-c" style="text-align: center; background-color: white"> <a href="#"  style="font-size:11px;font-weight:normal;color: rgba(0, 0, 0, 0.7);border-style: none;background-color: white" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-zixun">资讯</a></div>
+                <div class="ui-block-d" style="text-align: center; background-color: white"> <a href="#"  style="font-size:11px;font-weight:normal;color: rgba(0, 0, 0, 0.7);border-style: none;background-color: white" class="ui-btn ui-btn-icon-top ui-nodisc-icon ui-icon-wode">我的</a></div>
+            </div>-->
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

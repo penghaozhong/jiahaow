@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>充值</title>
+    <link rel="stylesheet" href="/jiahaow/res/jquery.mobile-1.4.5.css">
+    <script src="/jiahaow/res/jquery-1.11.3.min.js"></script>
+    <script src="/jiahaow/res/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header"  class="ui-header" style="height:50px;color: white;background-color:#2389da;text-shadow:0 0 0;border-top: 0px; ">
+        <div class="ui-title ui-btn-left" style="font-size: 16px;font-weight:normal">
+            <a href="http://192.168.1.103:9090/jiahaow/html/my/memberCenter/memberCenter.html" style="color: white;font-size: 16px;font-weight:normal;text-decoration:none;">返回</a></div>
+        <div  class="ui-title" style="font-size: 1.5em;padding: 0.4em 0;">充值</div>
+    </div>
+    <div role="main" class="ui-content">
+        <style type="text/css">
+            #save .ui-btn,
+            .ui-btn:visited  {
+                background-color: #2389da;
+                border-color: #ddd;
+                color: white ;
+                text-shadow: none ;
+                font-weight: normal;
+            }
+        </style>
+        <div class="ui-field-contain">
+                <label >我的账户(<span style="color: red">0元</span>)</label>
+        </div>
+        <label style="box-sizing: border-box !important; text-align: justify; padding-bottom: 8px; line-height: 2em; background-color: rgb(238,236,225); margin: 0px auto; min-height: 1.5em; padding-left: 20px; padding-right: 20px; max-width: 100%; word-wrap: break-word !important; white-space: pre-wrap; color: rgb(51,51,51); padding-top: 8px">充值须知</label>
+        <p>您好！充值将有助于您尽快支付加号的服务费，可以抢到加号号源。同时，如果您有1次及以上的加号成功记录，您的帐户余额我们会按年化8%的收益率为您计算收益。加号网全国统一热线：400-0011-373。</p>
+        <input name="number" style="line-height: 1.9em;" id="number" placeholder="请输入充值金额" value="" type="text">
+        <div id="save">
+            <input type="submit"  value="充&nbsp;值">
+        </div>
+    </div>
+</div>
+</body>
+</html>

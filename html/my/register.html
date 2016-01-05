@@ -79,6 +79,16 @@
         <div class="ui-btn-right ui-title" style="font-size: 16px;font-weight:normal">登录</div>
     </div>
     <div role="main" class="ui-content">
+        <style type="text/css">
+            #registerdiv .ui-btn,
+            .ui-btn:visited  {
+                background-color: #2389da;
+                border-color: #ddd;
+                color: white ;
+                text-shadow: none ;
+                font-weight: normal;
+            }
+        </style>
         <form  id="form" method="post" action="#">
             <input name="number" style="line-height: 1.9em;" id="number" placeholder="请输入您的手机号" value="" type="text">
             <div class="ui-grid-a" style="margin: -7px 0px -7px 0px">
@@ -86,7 +96,7 @@
                     <input name="yanzhengma" style="line-height: 1.9em;" id="yanzhengma" placeholder="请输入您的手机验证码" value="" type="text">
                 </div>
                 <div class="ui-block-b" style="width: 40%;"  data-role="controlgroup">
-                    <a style="color: #3388CC;font-size: 16px;font-weight:normal;text-decoration:none;" href="#" class="ui-btn">获取验证码</a>
+                    <a style="color: white;background-color: #3388CC;text-shadow:none; font-size: 16px;font-weight:normal;" href="#" class="ui-btn">获取验证码</a>
                 </div>
             </div>
             <input name="password" style="line-height: 1.9em;" id="password" placeholder="请输入密码，6-16个字符，区分大小写" value="" type="text">
@@ -110,7 +120,9 @@
             <p style="margin: -3px 0px 20px 0px">
                 <a href="http://192.168.1.103:9090/jiahaow/html/my/agreement.html" style="color: #4FBEEB;font-size: 12px;font-weight:normal;text-decoration:none;">同意加号网服务协议，则请继续注册。</a>
             </p>
-            <input type="submit" style="background-color: blue;"  value="注&nbsp;册">
+            <div id="registerdiv">
+                <input type="submit"  value="注&nbsp;册">
+            </div>
         </form>
         <div data-role="footer" data-position="fixed" data-tap-toggle="false" style="height: 48px;" >
             <div class="ui-grid-c">
